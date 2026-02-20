@@ -35,7 +35,7 @@ const featuredProducts = [
         id: 5,
         name: "Embroidered Phulkari Cushion",
         price: 1100,
-        image: "assets/images/product-silk.jpg",
+        image: "assets/images/product-cushion.jpg",
         category: "Textiles"
     },
     {
