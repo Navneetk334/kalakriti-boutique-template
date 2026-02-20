@@ -82,8 +82,9 @@ Replace with your own images for production use.
 7. SUPPORT
 ---------------------------------------
 
-For support, contact:
-your@email.com
+Support & Custom Work:
+For custom projects or modifications, visit:
+https://www.invinciblepros.com
 
 ---------------------------------------
 
