@@ -250,4 +250,15 @@ if (hamburger && navMenu) {
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     displayProducts();
+    const navLinks = document.querySelectorAll('#navMenu a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+});
+
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
 });
