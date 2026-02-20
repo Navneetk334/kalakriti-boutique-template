@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="KalaKriti - Premium handmade boutique in India. Explore artisanal pottery, hand-woven textiles, and traditional jewelry.">
+    <title>KalaKriti | Artisanal Handmade Boutique India</title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+
+            <div class="logo">KALAKRITI</div>
+
+            <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            </nav>
+
+            <div class="nav-icons">
+            <i class="fa-regular fa-user"></i>
+            <div style="position:relative;">
+                <i class="fa-solid fa-bag-shopping" id="cartToggle"></i>
+                <span class="cart-count">0</span>
+            </div>
+            </div>
+
+        </div>
+        </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Artisanal Soul, <br>Indian Craft.</h1>
+            <p>Discover the beauty of handmade excellence. Each piece tells a story of tradition, patience, and mastery.
+            </p>
+            <a href="#products" class="btn">Shop Collection</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Browse Categories</h2>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="assets/images/category-pottery.jpg"
+                        alt="Collection of handmade ceramic pottery vases in neutral tones">
+                    <div class="category-info">
+                        <h3>Pottery</h3>
+                        <a href="#" class="shop-now">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="assets/images/category-textile.jpg"
+                        alt="Stack of folded natural cotton and silk fabrics in earthy colors">
+                    <div class="category-info">
+                        <h3>Textiles</h3>
+                        <a href="#" class="shop-now">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="assets/images/category-jewelry.jpg"
+                        alt="Traditional Indian pearl and emerald statement choker necklace">
+                    <div class="category-info">
+                        <h3>Jewelry</h3>
+                        <a href="#" class="shop-now">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="section-padding" style="background-color: #f9f6f2;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Collections</h2>
+            </div>
+            <div class="product-grid" id="productGrid">
+                <!-- Featured products injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section id="bestsellers" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Best Sellers</h2>
+            </div>
+            <div class="product-grid" id="bestsellerGrid">
+                <!-- Best seller products injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section-padding" style="background-color: var(--white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose KalaKriti</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>100% Handmade</h3>
+                    <p>Every product is crafted by hand using traditional techniques passed down through generations.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainable</h3>
+                    <p>We use eco-friendly materials and sustainable processes to protect our artisans and the
+                        environment.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-gem"></i>
+                    <h3>Unique Pieces</h3>
+                    <p>No two items are exactly alike. Own a piece of art that is as unique as you are.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Pan-India Delivery</h3>
+                    <p>Bringing the finest Indian craftsmanship from remote villages to your doorstep across India.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding" style="background-color: #f9f6f2;">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Patrons Say</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"The pottery I ordered is even more beautiful in person. You can really feel the artisan's touch
+                        in every detail."</p>
+                    <div class="patron-info">
+                        <strong>Ananya Sharma</strong>
+                        <span>Mumbai</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I love the mission behind KalaKriti. Supporting local artisans while getting high-quality
+                        textiles is a win-win."</p>
+                    <div class="patron-info">
+                        <strong>Rohan Gupta</strong>
+                        <span>Bangalore</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The jewelry pieces are stunningly unique. I've received so many compliments on my hand-crafted
+                        jhumkas."</p>
+                    <div class="patron-info">
+                        <strong>Priya Iyer</strong>
+                        <span>Chennai</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container about-container">
+            <div class="about-img">
+                <img src="assets/images/artisans.jpg"
+                    alt="Artisans at work">
+            </div>
+            <div class="about-content">
+                <h2>Our Story</h2>
+                <p>Born in the heart of Jaipur, KalaKriti bridge the gap between traditional Indian artisans and the
+                    modern home. We curate pieces that are not just products, but legacies passed down through
+                    generations.</p>
+                <p>By choosing us, you support a community of local craftsmen and help keep ancient Indian art forms
+                    alive in a world of mass production.</p>
+                <a href="#" class="btn" style="margin-top: 1.5rem;">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section-padding newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join Our Community</h2>
+                <p>Subscribe to receive updates on new collections and artisan stories.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="logo">KALAKRITI</h3>
+                    <p>India's finest artisanal products, delivered to your doorstep.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>New Delhi, India</p>
+                    <p>hello@kalakriti.in</p>
+                    <p>+91 98765 43210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KalaKriti. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your Shopping Bag</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items logic -->
+                <p class="empty-cart-msg">Your bag is empty.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="total">
+                    <span>Total:</span>
+                    <span id="cartTotal">₹ 0.00</span>
+                </div>
+                <button class="btn" style="width: 100%; margin-top: 1rem;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
