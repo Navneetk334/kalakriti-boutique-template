@@ -1,5 +1,7 @@
-// Product Data
-// Product Data
+// ===============================
+// PRODUCT DATA
+// ===============================
+
 const featuredProducts = [
     {
         id: 1,
@@ -19,7 +21,7 @@ const featuredProducts = [
         id: 3,
         name: "Antique Silver Jhumkas",
         price: 1800,
-        image: "assets/images/product-jhumkas.jpg",
+        image: "assets/images/product-necklace.jpg",
         category: "Jewelry"
     },
     {
@@ -33,7 +35,7 @@ const featuredProducts = [
         id: 5,
         name: "Embroidered Phulkari Cushion",
         price: 1100,
-        image: "assets/images/product-cushion.jpg",
+        image: "assets/images/product-silk.jpg",
         category: "Textiles"
     },
     {
@@ -69,13 +71,19 @@ const bestSellers = [
     }
 ];
 
-// All products for lookup
+// Merge all products
 const allProducts = [...featuredProducts, ...bestSellers];
 
-// Cart State
+// ===============================
+// CART STATE
+// ===============================
+
 let cart = [];
 
-// DOM Elements
+// ===============================
+// DOM ELEMENTS
+// ===============================
+
 const productGrid = document.getElementById('productGrid');
 const bestsellerGrid = document.getElementById('bestsellerGrid');
 const cartToggle = document.getElementById('cartToggle');
@@ -84,45 +92,58 @@ const closeModal = document.querySelector('.close-modal');
 const cartItemsContainer = document.getElementById('cartItems');
 const cartTotalElement = document.getElementById('cartTotal');
 const cartCountElement = document.querySelector('.cart-count');
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
 
-// Initialize Products
+// ===============================
+// DISPLAY PRODUCTS
+// ===============================
+
 function displayProducts() {
-    // Display Featured
-    productGrid.innerHTML = featuredProducts.map(product => `
-        <div class="product-card">
-            <div class="product-img">
-                <img src="${product.image}" alt="${product.name}">
-                <div class="add-to-cart" onclick="addToCart(${product.id})">
-                    Add to Bag
-                </div>
-            </div>
-            <div class="product-info">
-                <h3>${product.name}</h3>
-                <div class="product-price">₹ ${product.price.toLocaleString('en-IN')}</div>
-            </div>
-        </div>
-    `).join('');
 
-    // Display Best Sellers
-    bestsellerGrid.innerHTML = bestSellers.map(product => `
-        <div class="product-card">
-            <div class="product-img">
-                <img src="${product.image}" alt="${product.name}">
-                <div class="add-to-cart" onclick="addToCart(${product.id})">
-                    Add to Bag
+    if (productGrid) {
+        productGrid.innerHTML = featuredProducts.map(product => `
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="${product.image}" alt="${product.name}" loading="lazy">
+                    <div class="add-to-cart" onclick="addToCart(${product.id})">
+                        Add to Bag
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <div class="product-price">₹ ${product.price.toLocaleString('en-IN')}</div>
                 </div>
             </div>
-            <div class="product-info">
-                <h3>${product.name}</h3>
-                <div class="product-price">₹ ${product.price.toLocaleString('en-IN')}</div>
+        `).join('');
+    }
+
+    if (bestsellerGrid) {
+        bestsellerGrid.innerHTML = bestSellers.map(product => `
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="${product.image}" alt="${product.name}" loading="lazy">
+                    <div class="add-to-cart" onclick="addToCart(${product.id})">
+                        Add to Bag
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <div class="product-price">₹ ${product.price.toLocaleString('en-IN')}</div>
+                </div>
             </div>
-        </div>
-    `).join('');
+        `).join('');
+    }
 }
 
-// Cart Functions
+// ===============================
+// CART FUNCTIONS
+// ===============================
+
 function addToCart(productId) {
     const product = allProducts.find(p => p.id === productId);
+    if (!product) return;
+
     const existingItem = cart.find(item => item.id === productId);
 
     if (existingItem) {
@@ -136,11 +157,14 @@ function addToCart(productId) {
 }
 
 function updateCartUI() {
-    // Update count
+
+    if (!cartItemsContainer || !cartTotalElement || !cartCountElement) return;
+
+    // Update cart count
     const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCountElement.textContent = totalCount;
 
-    // Update items list
+    // Update cart items
     if (cart.length === 0) {
         cartItemsContainer.innerHTML = '<p class="empty-cart-msg">Your bag is empty.</p>';
     } else {
@@ -156,12 +180,14 @@ function updateCartUI() {
                         <button class="qty-btn" onclick="changeQuantity(${item.id}, 1)">+</button>
                     </div>
                 </div>
-                <i class="fas fa-trash" style="margin-left: auto; cursor: pointer; color: #ccc;" onclick="removeFromCart(${item.id})"></i>
+                <i class="fas fa-trash"
+                   style="margin-left:auto;cursor:pointer;color:#ccc;"
+                   onclick="removeFromCart(${item.id})"></i>
             </div>
         `).join('');
     }
 
-    // Update total
+    // Update total price
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     cartTotalElement.textContent = `₹ ${total.toLocaleString('en-IN')}`;
 }
@@ -185,6 +211,8 @@ function removeFromCart(productId) {
 }
 
 function toggleCart(show) {
+    if (!cartModal) return;
+
     if (show) {
         cartModal.classList.add('active');
     } else {
@@ -192,7 +220,11 @@ function toggleCart(show) {
     }
 }
 
-// Event Listeners
+// ===============================
+// EVENT LISTENERS
+// ===============================
+
+// Cart toggle
 if (cartToggle) {
     cartToggle.addEventListener('click', () => toggleCart(true));
 }
@@ -201,14 +233,21 @@ if (closeModal) {
     closeModal.addEventListener('click', () => toggleCart(false));
 }
 
-// Close modal when clicking outside
+// Close cart when clicking outside
 window.addEventListener('click', (e) => {
     if (e.target === cartModal) {
         toggleCart(false);
     }
 });
 
-// Initialize on load
+// Mobile hamburger toggle
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}
+
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
     displayProducts();
 });
